@@ -1,0 +1,152 @@
+@layer base, components, utilities;
+
+@layer base {
+  @layer fonts {
+    /* noto-sans-regular - latin */
+    @font-face {
+      font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Noto Sans';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../assets/fonts/noto-sans-v42-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* noto-sans-500 - latin */
+    @font-face {
+      font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Noto Sans';
+      font-style: normal;
+      font-weight: 500;
+      src: url('../assets/fonts/noto-sans-v42-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* noto-sans-600 - latin */
+    @font-face {
+      font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Noto Sans';
+      font-style: normal;
+      font-weight: 600;
+      src: url('../assets/fonts/noto-sans-v42-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* noto-sans-700 - latin */
+    @font-face {
+      font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Noto Sans';
+      font-style: normal;
+      font-weight: 700;
+      src: url('../assets/fonts/noto-sans-v42-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+  }
+
+  :root {
+    /* Neutral Colors */
+    --c-neutral-100: hsl(0 0% 100%);
+    --c-neutral-200: hsl(210, 20%, 98%);
+    --c-neutral-400: hsl(213, 11%, 84%);
+    --c-neutral-600: hsl(0 0% 32%);
+    --c-neutral-900: hsl(0 0% 9%);
+    --c-indigo-700: hsl(245, 58%, 51%);
+    --c-indigo-800: hsl(244, 55%, 41%);
+
+    --color-text-base: var(--c-neutral-600);
+    --color-text-dark: var(--c-neutral-900);
+
+    --color-card-bg: var(--c-neutral-100);
+    --color-body-bg: linear-gradient(45deg, var(--c-neutral-200) 0%, var(--c-neutral-400) 100%);
+
+    /* Font Sizes */
+    --fs-14: calc(14 / 16 * 1rem);
+    --fs-16: calc(16 / 16 * 1rem);
+    --fs-18: calc(18 / 16 * 1rem);
+    --fs-20: calc(20 / 16 * 1rem);
+    --fs-36: calc(36 / 16 * 1rem);
+    --fs-48: calc(48 / 16 * 1rem);
+    --fs-60: calc(60 / 16 * 1rem);
+
+    --font-size-base: var(--fs-18);
+    --font-size-button-text: var(--fs-16);
+    --font-size-h1: var(--fs-36);
+    --font-size-h2: var(--fs-18);
+
+    @media (width >= calc(600 / 16 * 1rem)) {
+      --font-size-base: var(--fs-20);
+      --font-size-button-text: var(--fs-18);
+      --font-size-h1: var(--fs-48);
+    }
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      --font-size-base: var(--fs-20);
+      --font-size-h1: var(--fs-60);
+    }
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+  }
+
+  img,
+  picture,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    border: none;
+  }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-text-light);
+    background-color: var(--color-blue-accent);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: var(--font-size-link);
+  }
+
+  .wrapper {
+    width: min(calc(100% - 48px), calc(1200 / 16 * 1rem));
+    margin-inline: auto;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+  .visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+
+    &.skip:focus {
+      left: 0;
+      width: auto;
+      height: auto;
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid;
+    }
+  }
+}
