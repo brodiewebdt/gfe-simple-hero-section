@@ -214,6 +214,10 @@
       margin-block: calc(16 / 16 * 1rem) calc(32 / 16 * 1rem);
 
       grid-column: 1 / -1;
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        margin-block-end: calc(64 / 16 * 1rem);
+      }
     }
 
     .hero__buttons {
