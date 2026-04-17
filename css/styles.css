@@ -156,7 +156,7 @@
     }
 
     @media (width >= calc(600 / 16 * 1rem)) {
-      /* padding: 16px 56px; */
+      padding: 16px 32px;
     }
 
     &.btn--primary {
